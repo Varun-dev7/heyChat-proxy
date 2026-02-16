@@ -20,5 +20,9 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.send("Proxy is running 🚀");
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);
