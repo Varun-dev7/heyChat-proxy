@@ -8,9 +8,14 @@ app.use(cors({
   origin: "https://hey-chat-peach.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "X-Requested-With"
+  ]
 }));
 
+app.options("*", cors());
 
 app.use(
   "/chat",
@@ -23,7 +28,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.send("Proxy is running 🚀");
+  res.send("Proxy running 🚀");
 });
 
 const PORT = process.env.PORT || 3000;
