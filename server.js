@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors({
-  origin: "https://hey-chat-peach.vercel.app",
+  origin: "https://hey-chat-peach.vercel.app/",
   credentials: true,
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: [
